@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import styles from "./image.css" 
 
 class Image extends Component {
   render() {
