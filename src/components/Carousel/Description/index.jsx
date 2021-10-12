@@ -3,7 +3,7 @@ import data from "../../../data";
 
 class Description extends Component {
   render() {
-    const { name, text } = data[0];
+    const { name, text } = this.props;
 
     return (
       <div className="descriptionText">

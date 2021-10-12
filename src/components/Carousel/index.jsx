@@ -19,7 +19,7 @@ function Carousel() {
     if (slider === 0) {
       setSlider(2);
     } else {
-      setSlider(slider + 1);
+      setSlider(slider - 1);
     }
   };
 
@@ -31,7 +31,6 @@ function Carousel() {
       <button onClick={nextSlider} className="rightButtonSLider">
         {">"}
       </button>
-      
     </div>
     <Description name ={data[slider].name} text = {data[slider].text} />
     </div>
