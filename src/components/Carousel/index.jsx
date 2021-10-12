@@ -7,7 +7,7 @@ import styles from "./carousel.css";
 function Carousel() {
   const [slider, setSlider] = useState(0);
 
-  const changeSlider = () => {
+  const nextSlider = () => {
     if (slider === 2) {
       setSlider(0);
     } else {
@@ -15,15 +15,25 @@ function Carousel() {
     }
   };
 
+  const prevSlider = () => {
+    if (slider === 0) {
+      setSlider(2);
+    } else {
+      setSlider(slider + 1);
+    }
+  };
+
   return (
-    <div className="constructorCarousel">
-      <button className="leftButtonSLider">{"<"}</button>
+    <div className="container">
+   <div className="constructorCarousel">
+      <button onClick = {prevSlider} className="leftButtonSLider">{"<"}</button>
       <Image alt="img" src={data[slider].picture} />
-      <button onClick={changeSlider} className="rightButtonSLider">
+      <button onClick={nextSlider} className="rightButtonSLider">
         {">"}
       </button>
-
-      <Description />
+      
+    </div>
+    <Description name ={data[slider].name} text = {data[slider].text} />
     </div>
   );
 }
