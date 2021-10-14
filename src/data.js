@@ -16,7 +16,8 @@ const data = [
     name: 'Saturn',
     picture: 'https://hubblesite.org/files/live/sites/hubble/files/home/hubble-30th-anniversary/images/_images/hubble_30th_images/hubble-30th-saturn.jpg?t=tn2400',
     text: 'Hubble captured exquisite views of Saturn’s ring system and atmospheric details that once could only be provided by spacecraft visiting the distant world.'
-  }
+  },
+  
 ]
 
 export default data;
