@@ -6,33 +6,31 @@ import styles from "./carousel.css";
 
 function Carousel() {
   const [slider, setSlider] = useState(0);
+  const [id, setId] = useState(null);
   const [isStarted, setIsStarted] = useState(false);
 
   const nextSlider = () => {
-    if (slider >= 2) {
-      setSlider(0);
-    } else {
-      setSlider((prevslider) => prevslider + 1);
-    }
+    // if (slider >= data.length) {
+    //   setSlider(0);
+    // } else {
+    //   setSlider((prevslider) => prevslider + 1);
+    // }
+
+    setSlider((slider) => (slider + 1) % data.length )
   };
 
+  const interval = () => 
+    setInterval(() => {
+      nextSlider();
+    }, 2000);
+  ;
+
   useEffect(() => {
-    let antiloop = slider;
-    
-    const interval = () =>
-      setInterval(() => {
-        if (antiloop >= 2) {
-          antiloop = 0;
-          setSlider(0);
-        } else {
-          antiloop++;
-          setSlider((prevslider) => prevslider + 1);
-        }
-      }, 2000);
+    console.log(slider);
     if (isStarted) {
-      interval();
+      setId(interval());
     } else {
-      return clearInterval(interval);
+      return clearInterval(id);
     }
   }, [isStarted]);
 
